@@ -6,12 +6,32 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content >
+  <div style="padding:5px">
+  
+  <ion-list>
+    <ion-item>Luis</ion-item>
+    
+      <ion-item>Kevin</ion-item>
+      
+        <ion-item>Luisa</ion-item>
+      
+  </ion-list>
+  
+  <ion-list>
+  <ion-item *ngFor="let entry of form">
+    <ion-label>{{entry.val}}</ion-label>
+    <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+  </ion-item>
+</ion-list>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-button color="dark" expand="block">
+  <ion-icon name="bowling-ball-outline" style="padding-right:5px"></ion-icon>
+  Dark
+</ion-button>
+
+<app-header></app-header>
+  
+  </div>
+
 </ion-content>

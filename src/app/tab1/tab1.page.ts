@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  public form = [
+     { val: 'Pepperoni', isChecked: true },
+     { val: 'Sausage', isChecked: false },
+     { val: 'Mushroom', isChecked: false },
+     {val:'Fritanga', isChecked: false}
+   ];
+
   constructor() {}
 
 }
