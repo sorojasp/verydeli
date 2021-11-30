@@ -7,8 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  
+
   constructor() { }
 
   ngOnInit() {}
+
+
+  public catchClick(){
+    console.log("click catched...=)")
+  }
 
 }

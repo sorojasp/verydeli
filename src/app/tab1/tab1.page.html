@@ -1,18 +1,14 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<app-header></app-header>
 </ion-header>
 
 <ion-content >
-  <div style="padding:5px">
+  <div [style]="this.styleDiv">
   
   <ion-list>
     <ion-item>Luis</ion-item>
     
-      <ion-item>Kevin</ion-item>
+      <ion-item>{{this.nameStudent1}}</ion-item>
       
         <ion-item>Luisa</ion-item>
       
@@ -25,12 +21,13 @@
   </ion-item>
 </ion-list>
 
-<ion-button color="dark" expand="block">
-  <ion-icon name="bowling-ball-outline" style="padding-right:5px"></ion-icon>
+<ion-button color="dark" expand="block" (click)="this.changeStyle()">
+  <ion-icon [name]="this.icon" style="padding-right:5px">
+  </ion-icon>
   Dark
 </ion-button>
 
-<app-header></app-header>
+
   
   </div>
 
