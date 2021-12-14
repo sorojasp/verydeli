@@ -1,34 +1,37 @@
 <ion-header [translucent]="true">
-<app-header></app-header>
+  <app-header></app-header>
 </ion-header>
 
-<ion-content >
-  <div [style]="this.styleDiv">
-  
-  <ion-list>
-    <ion-item>Luis</ion-item>
-    
-      <ion-item>{{this.nameStudent1}}</ion-item>
-      
-        <ion-item>Luisa</ion-item>
-      
-  </ion-list>
-  
-  <ion-list>
-  <ion-item *ngFor="let entry of form">
-    <ion-label>{{entry.val}}</ion-label>
-    <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-  </ion-item>
-</ion-list>
+<ion-content>
+  <div style="padding:5px">
+    <p style="font-weight: bold;" *ngIf="this.showParagraph">
+      The next year is very import for Chibchombia....so the soccer dont assist
+      the world cup ...
+    </p>
 
-<ion-button color="dark" expand="block" (click)="this.changeStyle()">
-  <ion-icon [name]="this.icon" style="padding-right:5px">
-  </ion-icon>
-  Dark
-</ion-button>
+    <ion-button (click)="this.showNotShowP()" expand="block"
+      >show or not show paragraph</ion-button
+    >
 
+    <ion-button (click)="this.getNasaInformation()" expand="block">
+      Get nasa photos</ion-button
+    >
 
-  
+    <ion-card
+      *ngFor="let image of this.photosNasa"
+      style="background-color: #F5F7F7; "
+    >
+      <ion-card-header>
+        <ion-card-subtitle
+          ><span style="font-weight: bold; color:black;">Camera: </span>
+          {{image.camera.full_name}}</ion-card-subtitle
+        >
+        <ion-card-subtitle>Date: {{image.earth_date}}</ion-card-subtitle>
+        <ion-card-subtitle>Rover: {{image.rover.name}}</ion-card-subtitle>
+        <ion-card-title></ion-card-title>
+      </ion-card-header>
+
+      <ion-img [src]="image.img_src" style="padding-top: 8px"></ion-img>
+    </ion-card>
   </div>
-
 </ion-content>
